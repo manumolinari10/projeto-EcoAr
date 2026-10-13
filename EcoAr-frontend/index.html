@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>EcoArt</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <i class="ph ph-leaf"></i>EcoAr
+        </div>
+        <div class="caixa-busca">
+            <i class="ph ph-magnifying-glass"></i>
+            <input id="search" placeholder='Pesquisar localização' type="text">
+        </div>
+        <div class="atualizacao-container">
+            <div>
+                Última atualização: <span id="hora">00:00</span>
+            </div>
+            <button class="btn-toggle">
+                <div class="bolinha"></div>
+                <i class="ph ph-moon"></i>
+            </button>
+        </div>
+        </div>
+    </header>
+
+    <div class="conteudo-principal">
+        <div class="coluna-esquerda">
+            <aside class="qualidade-ar bg-bom">
+                <div class="cabecalho-verde">QUALIDADE DO AR (AQI)
+                    <i class="ph ph-gear"></i>
+                </div>
+                <div class="pagina-carrossel" id="pag-medidor">
+                    <div class="medidor-container">
+                        <svg viewBox="0 0 200 100" class="arco-svg">
+                            <path class="arco-fundo" d="M 20 100 A 80 80 0 0 1 180 100"></path>
+                            <path class="arco-progresso" d="M 20 100 A 80 80 0 0 1 180 100"></path>
+                        </svg>
+
+                        <div class="medidor-textos">
+                            <div class="medidor-numero">38</div>
+                            <div class="medidor-status">Boa</div>
+                        </div>
+                    </div>
+
+                    <div class="gases-container">
+                        <div class="gas-box">
+                            <div class="elemento">PM2.5</div>
+                            <div class="valor-elem">8.1</div>
+                            <div class="unidade">μg/m³</div>
+                        </div>
+                        <div class="gas-box">
+                            <div class="elemento">PM10</div>
+                            <div class="valor-elem">17</div>
+                            <div class="unidade">μg/m³</div>
+                        </div>
+                        <div class="gas-box">
+                            <div class="elemento">NO2</div>
+                            <div class="valor-elem">5.3</div>
+                            <div class="unidade">ppb</div>
+                        </div>
+                        <div class="gas-box">
+                            <div class="elemento">O3</div>
+                            <div class="valor-elem">11.2</div>
+                            <div class="unidade">ppb</div>
+                        </div>
+                        <div class="gas-box">
+                            <div class="elemento">CO</div>
+                            <div class="valor-elem">0.2</div>
+                            <div class="unidade">mg/m³</div>
+                        </div>
+                    </div>
+
+                    <div class="extra-container">
+                        <div class="extra-box box-larga box-icone">
+                            <i class="ph ph-dots-nine"></i>
+                            <div class="conteudo-texto">
+                                <div>PM2.5</div>
+                                <div>Boa</div>
+                            </div>
+                        </div>
+                        <div class="extra-box box-icone">
+                            <i class="ph ph-wind"></i>
+                            <div class="conteudo-texto">
+                                <div>2</div>
+                                <div>ug/m³</div>
+                            </div>
+                        </div>
+                        <div class="extra-box box-icone">
+                            <i class="ph ph-cloud"></i>
+                            <div class="conteudo-texto">
+                                <div>1</div>
+                                <div>mg/m³</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagina-carrossel" id="pag-dicas" style="display: none;">
+                    <div class="dica-item">
+                        <i class="ph ph-mask-face"></i>
+                        <span>Use máscara em áreas externas</span>
+                    </div>
+                    <div class="dica-item">
+                        <i class="ph ph-house-line"></i>
+                        <span>Mantenha as janelas fechadas</span>
+                    </div>
+                </div>
+                <div class="pagina-carrossel" id="pag-previsao" style="display: none;">
+                    <div class="dica-item">
+                        <i class="ph ph-calendar"></i>
+                        <span>A qualidade do ar vai melhorar amanhã.</span>
+                    </div>
+                </div>
+
+                <div class="carrossel-pontos">
+                    <div class="ponto ativo"></div>
+                    <div class="ponto"></div>
+                    <div class="ponto"></div>
+                </div>
+            </aside>
+
+            <div class="tabela-previsao">
+                <div class="linha-cabecalho">
+                    <div>Horário</div>
+                    <div>AQI</div>
+                    <div>Temp (ºC)</div>
+                    <div>Vento (km/h)</div>
+                </div>
+                <div class="linha-dados">
+                    <div>12:00</div>
+                    <div>38</div>
+                    <div>24.1</div>
+                    <div>11</div>
+                </div>
+                <div class="linha-dados">
+                    <div>12:00</div>
+                    <div>38</div>
+                    <div>24.1</div>
+                    <div>11</div>
+                </div>
+                <div class="linha-dados">
+                    <div>12:00</div>
+                    <div>38</div>
+                    <div>24.1</div>
+                    <div>11</div>
+                </div>
+                <div class="linha-dados">
+                    <div>12:00</div>
+                    <div>38</div>
+                    <div>24.1</div>
+                    <div>11</div>
+                </div>
+                <div class="linha-dados">
+                    <div>12:00</div>
+                    <div>38</div>
+                    <div>24.1</div>
+                    <div>11</div>
+                </div>
+                <div class="linha-dados">
+                    <div>12:00</div>
+                    <div>38</div>
+                    <div>24.1</div>
+                    <div>11</div>
+                </div>
+                <div class="linha-dados">
+                    <div>12:00</div>
+                    <div>38</div>
+                    <div>24.1</div>
+                    <div>11</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coluna-direita">
+            <div class="titulo-div">CLIMA LOCAL</div>
+            <aside class="clima">
+                <div class="titulos">
+                    <div class="titulo-icone">
+                        <i class="ph ph-thermometer"></i>Temperatura
+                    </div>
+                    <div class="valor">24ºC</div>
+                </div>
+                <div class="titulos">
+                    <div class="titulo-icone">
+                        <i class="ph ph-sun-dim"></i>Sensação Térmica
+                    </div>
+                    <div class="valor">25ºC</div>
+                </div>
+                <div class="titulos">
+                    <div class="titulo-icone">
+                        <i class="ph ph-drop"></i>Umidade
+                    </div>
+                    <div class="valor">65%</div>
+                </div>
+                <div class="titulos">
+                    <div class="titulo-icone">
+                        <i class="ph ph-wind"></i>Vento
+                    </div>
+                    <div class="valor">12 km/h</div>
+                </div>
+            </aside>
+
+            <aside class="analise">
+                <div class="analise-cabecalho">
+                    <div class="titulo-sessao">ANÁLISE HISTÓRICA</div>
+                    <div class="analise-botoes">
+                        <button class="btn-periodo ativo">24h</button>
+                        <button class="btn-periodo">7 dias</button>
+                        <button class="btn-periodo">30 dias</button>
+                    </div>
+                </div>
+                <div class="legenda-grafico">
+                    <div class="item-legenda">
+                        <div class="bolinha-legenda verde"></div>AQI
+                    </div>
+                    <div class="item-legenda">
+                        <div class="bolinha-legenda azul"></div>Temp.
+                    </div>
+                    <div class="item-legenda">
+                        <div class="bolinha-legenda laranja"></div>Temp.
+                    </div>
+                </div>
+                <div class="grafico-container">
+                    <canvas id="graficoHistorico"></canvas>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <div class="modal-fundo">
+        <div class="modal-caixa">
+
+            <div class="modal-cabecalho">
+                <h3>Preferências</h3>
+                <i class="ph ph-x btn-fechar"></i>
+            </div>
+
+            <div class="modal-corpo">
+                <div>Sistema de Medida</div>
+                <div class="botoes-medida">
+                    <button class="btn-medida ativo">Celsius (ºC)</button>
+                    <button class="btn-medida">Fahrenheit (ºF)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

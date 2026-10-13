@@ -192,7 +192,3 @@ function atualizarDicasDeSaude(indiceAQI) {  // 2. Função que decide o que mos
 
     caixaDicas.innerHTML = dicasHTML;  // 3. Injeta as dicas criadas dentro da sua div no HTML
 }
-
-// PARA TESTAR AGORA MESMO:
-// Mude este número de 1 a 5, guarde o ficheiro, e clique na bolinha das dicas no seu carrossel!
-atualizarDicasDeSaude(1);

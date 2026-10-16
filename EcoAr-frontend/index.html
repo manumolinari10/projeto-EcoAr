@@ -21,7 +21,7 @@
             <i class="ph ph-leaf"></i>EcoAr
         </div>
         <div class="caixa-busca">
-            <i class="ph ph-magnifying-glass"></i>
+            <i class="ph ph-magnifying-glass" id="btn-pesquisar" style="cursor: pointer;"></i>
             <input id="search" placeholder='Pesquisar localização' type="text">
         </div>
         <div class="atualizacao-container">
@@ -50,7 +50,7 @@
                         </svg>
 
                         <div class="medidor-textos">
-                            <div class="medidor-numero">38</div>
+                            <div class="medidor-numero" id="aqi-valor">38</div>
                             <div class="medidor-status">Boa</div>
                         </div>
                     </div>
@@ -58,27 +58,27 @@
                     <div class="gases-container">
                         <div class="gas-box">
                             <div class="elemento">PM2.5</div>
-                            <div class="valor-elem">8.1</div>
+                            <div class="valor-elem" id="pm25-valor">8.1</div>
                             <div class="unidade">μg/m³</div>
                         </div>
                         <div class="gas-box">
                             <div class="elemento">PM10</div>
-                            <div class="valor-elem">17</div>
+                            <div class="valor-elem" id="pm10-valor">17</div>
                             <div class="unidade">μg/m³</div>
                         </div>
                         <div class="gas-box">
                             <div class="elemento">NO2</div>
-                            <div class="valor-elem">5.3</div>
+                            <div class="valor-elem" id="no2-valor">5.3</div>
                             <div class="unidade">ppb</div>
                         </div>
                         <div class="gas-box">
                             <div class="elemento">O3</div>
-                            <div class="valor-elem">11.2</div>
+                            <div class="valor-elem" id="o3-valor">11.2</div>
                             <div class="unidade">ppb</div>
                         </div>
                         <div class="gas-box">
                             <div class="elemento">CO</div>
-                            <div class="valor-elem">0.2</div>
+                            <div class="valor-elem" id="co-valor">0.2</div>
                             <div class="unidade">mg/m³</div>
                         </div>
                     </div>
@@ -184,13 +184,13 @@
         </div>
 
         <div class="coluna-direita">
-            <div class="titulo-div">CLIMA LOCAL</div>
+            <div class="titulo-div" id="nome-cidade">CLIMA LOCAL</div>
             <aside class="clima">
                 <div class="titulos">
                     <div class="titulo-icone">
                         <i class="ph ph-thermometer"></i>Temperatura
                     </div>
-                    <div class="valor">24ºC</div>
+                    <div class="valor" id="temperatura-valor">24ºC</div>
                 </div>
                 <div class="titulos">
                     <div class="titulo-icone">
